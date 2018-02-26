@@ -1,12 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Giphy Gen</title>
 </head>
+
 <body>
-    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="buttons"></div>
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-7">
+                <div id="gif"></div>
+            </div>
+            <div class="col-md-5">
+                <form>
+                    Add a car:
+                    <br>
+                    <input id="searched-val" type="text" name="car">
+                    <br>
+                    <input id="search-btn" type="submit" value="Submit">
+                </form>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+    <script src="./assets/javascript/giphy.js"></script>
 </body>
+
 </html>
