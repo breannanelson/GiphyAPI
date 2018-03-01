@@ -12,34 +12,36 @@
 </head>
 
 <body>
+
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div id="buttons-view"></div>
-                
+                <div class="jumbotron title">
+                    <h1 class="display-3">Giphy Gen</h1>
+                    <p class="lead">Express yourself with the perfect gif. Don't see your mood, search it!</p>
+                    <hr class="my-4" id="divider">
+                    <p class="lead">
+                        <div class="text-center" id="buttons-view"></div>
+                    </p>
+                </div>
+
             </div>
         </div>
         <div class="row">
-            <div class="col-md-7">
-                <div id="gif"></div>
-            </div>
-            <div class="col-md-5">
+            <div class="col-md-8" id="gif"></div>
+            <div class="col-md-4">
                 <form>
-                    Add a car:
+                    <p class="lead">How are you feeling?</p>
+                    <input id="searched-val" class="form-control" type="text" name="feeling">
                     <br>
-                    <input id="searched-val" type="text" name="car">
-                    <br>
-                    <input id="search-btn" type="submit" value="Submit">
-                </form>
-
+                    <input id="search-btn" class="btn btn-outline-secondary" type="submit" value="Submit">
                 </form>
             </div>
         </div>
-    </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-        crossorigin="anonymous"></script>
-    <script src="./assets/javascript/giphy.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+        <script src="./assets/javascript/giphy.js"></script>
 </body>
 
 </html>

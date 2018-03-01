@@ -1,0 +1,46 @@
+/* .pic {
+    text-align: center;
+} */
+
+/* 
+.pic {
+    margin-top: auto;
+    margin-bottom: auto;
+} */
+
+body {
+    background: url("../images/background.png");
+}
+
+.title {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+}
+
+#divider, p {
+    color: #ffffff;
+}
+
+/* form {
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 90px;
+} */
+
+#searched-val {
+    background-color: rgba(95, 95, 95, 0.3);
+    color: #ffffff;
+}
+/* 
+button {
+    color: #ffffff;
+} */
+
+.gifRow {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding-top: 10px;
+}
+
+.car-btn {
+    margin-right: 15px;
+    margin-bottom: 20px;
+}
