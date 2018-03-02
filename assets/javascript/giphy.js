@@ -1,39 +1,36 @@
-// Giphy Express
 
-var carArr = ["Happy", "Love", "Suprised", "Confused", "Amused", "Frustration", "Sad", "Disappointed", "Exhausted", "Fear"];
+var emoArr = ["Happy", "Love", "Suprised", "Confused", "Amused", "Frustration", "Sad", "Disappointed", "Exhausted", "Fear"];
 
-var carCount = 0;
+var emoCount = 0;
 
-for (var i = 0; i < carArr.length; i++) {
+for (var i = 0; i < emoArr.length; i++) {
     var a = $("<button class='car-btn btn btn-outline-secondary'>");
-    // Adding a class of car-btn to our button
     // Adding a data-attribute
-    a.attr("data-name", carArr[i]);
+    a.attr("data-name", emoArr[i]);
     // Providing the initial button text
-    a.text(carArr[i]);
+    a.text(emoArr[i]);
 
     $("#buttons-view").append(a);
-    carCount++;
+    emoCount++;
 }
 
 
 $("#search-btn").on("click", function () {
 
     var searchTerm = $("#searched-val").val();
-    carArr.push(searchTerm);
+    emoArr.push(searchTerm);
 
     var a = $("<button class='car-btn btn btn-outline-secondary'>");
-    // Adding a class of car-btn to our button
     // Adding a data-attribute
-    a.attr("data-name", carArr[carCount]);
+    a.attr("data-name", emoArr[emoCount]);
     // Providing the initial button text
-    a.text(carArr[carCount]);
+    a.text(emoArr[emoCount]);
 
     $("#buttons-view").append(a);
 
     $("#searched-val").val("");
 
-    carCount++;
+    emoCount++;
 
     event.preventDefault()
 })
@@ -50,20 +47,27 @@ $(document).on("click", ".car-btn", function () {
         url: queryURL,
         method: "GET",
     }).then(function (obj) {
-        //image
-        for (var i = 0; i <= 10; i=i+2) {
-            $("#gif").append("<div class='row rounded gifRow'><div class='col-md-6'><img class='img-fluid pic' " +
-                "src='" + obj.data[i].images["480w_still"].url + "'" +
-                "data-still='" + obj.data[i].images["480w_still"].url + "'" +
-                "data-animate='" + obj.data[i].images.fixed_height.url + "'" +
-                "alt='Gif of " + searchTerm + "' data-state='still' style='width:300px;'><p>Rated: " + obj.data[i].rating + "</p></div>"+
-                "<div class='col-md-6'><img class='img-fluid pic' " +
-                "src='" + obj.data[i+1].images["480w_still"].url + "'" +
-                "data-still='" + obj.data[i+1].images["480w_still"].url + "'" +
-                "data-animate='" + obj.data[i+1].images.fixed_height.url + "'" +
-                "alt='Gif of " + searchTerm + "' data-state='still' style='width:300px;'><p>Rated: " + obj.data[i+1].rating + "</p></div></div>");
+        console.log(obj)
+        console.log(obj.data)
+        if (obj.data.length === 0) {
+            swal("Im sorry, Giphy Gen couldn't find any results for " + searchTerm + ". Try a different emotion!");
+            $("button[data-name='"+searchTerm+"']").remove();
+        }
+        else {
+            //image
+            for (var i = 0; i <= 10; i = i + 2) {
+                $("#gif").append("<div class='row rounded gifRow'><div class='col-md-6'><img class='img-fluid pic' " +
+                    "src='" + obj.data[i].images["480w_still"].url + "'" +
+                    "data-still='" + obj.data[i].images["480w_still"].url + "'" +
+                    "data-animate='" + obj.data[i].images.fixed_height.url + "'" +
+                    "alt='Gif of " + searchTerm + "' data-state='still' style='width:300px;'><p>Rated: " + obj.data[i].rating + "</p></div>" +
+                    "<div class='col-md-6'><img class='img-fluid pic' " +
+                    "src='" + obj.data[i + 1].images["480w_still"].url + "'" +
+                    "data-still='" + obj.data[i + 1].images["480w_still"].url + "'" +
+                    "data-animate='" + obj.data[i + 1].images.fixed_height.url + "'" +
+                    "alt='Gif of " + searchTerm + "' data-state='still' style='width:300px;'><p>Rated: " + obj.data[i + 1].rating + "</p></div></div>");
             }
-
+        }
 
     })
 

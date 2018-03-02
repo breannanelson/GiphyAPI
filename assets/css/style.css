@@ -2,11 +2,7 @@
     text-align: center;
 } */
 
-/* 
-.pic {
-    margin-top: auto;
-    margin-bottom: auto;
-} */
+
 
 body {
     background: url("../images/background.png");
@@ -41,6 +37,12 @@ button {
 }
 
 .car-btn {
+    cursor: pointer;
     margin-right: 15px;
     margin-bottom: 20px;
 }
+
+.pic {
+    cursor: pointer;
+}
+
