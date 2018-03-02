@@ -51,7 +51,7 @@ $(document).on("click", ".car-btn", function () {
         console.log(obj)
         console.log(obj.data)
         if (obj.data.length === 0) {
-            swal("Im sorry, Giphy Gen couldn't find any results for " + searchTerm + ". Try a different emotion!");
+            swal("I'm sorry, Giphy Gen couldn't find any results for " + searchTerm + ". Try a different emotion!");
             $("button[data-name='"+searchTerm+"']").remove();
         }
         else {
