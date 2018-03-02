@@ -44,5 +44,7 @@ button {
 
 .pic {
     cursor: pointer;
+    padding-left: 30px;
+    padding-top: 10px;
 }
 

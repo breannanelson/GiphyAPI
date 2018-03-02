@@ -21,6 +21,7 @@ $("#search-btn").on("click", function () {
     emoArr.push(searchTerm);
 
     var a = $("<button class='car-btn btn btn-outline-secondary'>");
+
     // Adding a data-attribute
     a.attr("data-name", emoArr[emoCount]);
     // Providing the initial button text
@@ -60,12 +61,12 @@ $(document).on("click", ".car-btn", function () {
                     "src='" + obj.data[i].images["480w_still"].url + "'" +
                     "data-still='" + obj.data[i].images["480w_still"].url + "'" +
                     "data-animate='" + obj.data[i].images.fixed_height.url + "'" +
-                    "alt='Gif of " + searchTerm + "' data-state='still' style='width:300px;'><p>Rated: " + obj.data[i].rating + "</p></div>" +
+                    "alt='Gif of " + searchTerm + "' data-state='still' style='width:300px;'><p style='padding-left:30px;'>Rated: " + obj.data[i].rating + "</p></div>" +
                     "<div class='col-md-6'><img class='img-fluid pic' " +
                     "src='" + obj.data[i + 1].images["480w_still"].url + "'" +
                     "data-still='" + obj.data[i + 1].images["480w_still"].url + "'" +
                     "data-animate='" + obj.data[i + 1].images.fixed_height.url + "'" +
-                    "alt='Gif of " + searchTerm + "' data-state='still' style='width:300px;'><p>Rated: " + obj.data[i + 1].rating + "</p></div></div>");
+                    "alt='Gif of " + searchTerm + "' data-state='still' style='width:300px;'><p style='padding-left:30px;'>Rated: " + obj.data[i + 1].rating + "</p></div></div>");
             }
         }
 
